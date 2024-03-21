@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { headers } from "next/headers";
+import hackedfont from "@/public/HACKED.module.css";
+import localFont from 'next/font/local';
 
 export const runtime = "edge";
+
+const HACKED = localFont({
+  src: "../fonts/HACKED.ttf", /* creds to David Libeau for the font */
+  weight: "normal",
+});
 
 export async function generateMetadata() {
   const h = headers();
@@ -30,7 +37,7 @@ export async function generateMetadata() {
   return {
     title: `${hostname} - Parked by MartinDEV`,
     description: `The domain ${hostname} is parked by MartinDEV.`,
-    image: `https://${hostname}/og.png`,
+    image: `https://${hostname}/og?hn=${hostname}`,
   };
 }
 
@@ -61,8 +68,9 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex flex-col items-center">
-        <Image src="/logo.svg" width={100} height={100} alt="logo" />
-        <h1 className="text-4xl font-bold mt-4">Parked by MartinDEV</h1>
+        <Image src="/logo.png " width={300} height={300} alt="logo" />
+        <h1 className={`${HACKED.className} text-8xl mt-4`}>{hostname}</h1>
+        <h2 className="text-4xl font-bold mt-4">Parked by MartinDEV</h2>
         <p className="text-lg text-center mt-4">
           The domain <span className="font-bold">{hostname}</span> is parked by MartinDEV.
         </p>
