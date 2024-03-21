@@ -12,13 +12,18 @@ export async function generateMetadata() {
     const parts = hostname.split(".");
     const length = parts.length;
     const tld = parts[length - 1];
+    console.log(`tld: ${tld}`);
     const SLDs = ["com", "net", "org", "co", "plc", "ltd",]
+    console.log(`parts[length - 2]: ${parts[length - 2]}`);
     const eTLDs = /* effective TLDs as seen in the public suffix list */ ["pages.dev", "workers.dev"];
     let domain: string;
-    if (SLDs.includes(parts[length - 2]) && eTLDs.includes(`${parts[length - 2]}.${tld}`)) {
-      domain = `${parts[length - 3]}.${parts[length - 2]}.${tld}`;
+    if (SLDs.includes(parts[length - 2]) || eTLDs.includes(`${parts[length - 2]}.${tld}`)) {
+      console.log(`parts[length - 2]: ${parts[length - 2]}`); // `parts[length - 2]: `
+      console.log(`parts[length - 3]: ${parts[length - 3]}`); // `parts[length - 3]: `
+      domain = `${parts[length - 3]}.${parts[length - 2]}`;
     } else {
-      domain = `${parts[length - 2]}.${tld}`;
+      console.log(`parts[length - 2]: ${parts[length - 2]}`); // `parts[length - 2]: `
+      domain = `${parts[length - 2]}`;
     }
     return `${domain}.${tld}`;
   })(hostname) : hostname;
