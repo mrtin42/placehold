@@ -99,3 +99,5 @@ export default function Home() {
     </main>
   );
 }
+
+// goated domain parking page
