@@ -38,6 +38,24 @@ export async function generateMetadata() {
     title: `${hostname} - Parked by MartinDEV`,
     description: `The domain ${hostname} is parked by MartinDEV.`,
     image: `https://placehold.pages.dev/og?hn=${hostname}`,
+    openGraph: {
+      title: `${hostname} - Parked by MartinDEV`,
+      description: `The domain ${hostname} is parked by MartinDEV.`,
+      images: [
+        {
+          url: `https://placehold.pages.dev/og?hn=${hostname}`,
+          width: 1200,
+          height: 630,
+          alt: `${hostname} - Parked by MartinDEV`,
+        },
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@t_ub3",
+      creator: "@t_ub3",
+      images: [`https://placehold.pages.dev/og?hn=${hostname}`],
+    },
   };
 }
 
