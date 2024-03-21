@@ -37,7 +37,7 @@ export async function generateMetadata() {
   return {
     title: `${hostname} - Parked by MartinDEV`,
     description: `The domain ${hostname} is parked by MartinDEV.`,
-    image: `https://${hostname}/og?hn=${hostname}`,
+    image: `https://placehold.pages.dev/og?hn=${hostname}`,
   };
 }
 
