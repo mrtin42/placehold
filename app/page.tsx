@@ -87,8 +87,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex flex-col items-center">
         <Image src="/logo.png " width={300} height={300} alt="logo" />
-        <h1 className={`${HACKED.className} text-5xl md:text-8xl mt-4`}>{hostname}</h1>
-        <h2 className="text-2xl md:text-4xl font-bold mt-4">Parked by MartinDEV</h2>
+        <h1 className={`${HACKED.className} text-center text-5xl md:text-8xl mt-4`}>{hostname}</h1>
+        <h2 className="text-2xl md:text-4xl text-center font-bold mt-4">Parked by MartinDEV</h2>
         <p className="text-sm md:text-lg text-center mt-4">
           The domain <span className="font-bold">{hostname}</span> is parked by MartinDEV.
         </p>
